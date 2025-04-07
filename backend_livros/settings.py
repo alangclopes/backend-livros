@@ -8,7 +8,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-0_!r47ym424fp2#fq2ze$
 
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
 
 CORS_ALLOW_ALL_ORIGINS = True
@@ -57,7 +56,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'backend_livros.wsgi.application'
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.config(
+        default=f'sqlite:///{os.path.join(BASE_DIR, "db.sqlite3")}'
+    )
 }
 
 AUTH_PASSWORD_VALIDATORS = [
