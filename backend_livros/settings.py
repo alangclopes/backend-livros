@@ -8,7 +8,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-0_!r47ym424fp2#fq2ze$
 
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
+
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
 
 CORS_ALLOW_ALL_ORIGINS = True
 
