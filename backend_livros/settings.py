@@ -4,11 +4,11 @@ import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-0_!r47ym424fp2#fq2ze$b$_!$n)e)0d81^o#69b59s3a3za%#')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-0_!r47ym424fp2#fq2ze$b$_!$n)e)0d81^o#69b59s3a3za%#')
 
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',') if not DEBUG else ['*']
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 
 CORS_ALLOW_ALL_ORIGINS = True
 
@@ -19,9 +19,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'library',
     'rest_framework',
     'corsheaders',
-    'library',
 ]
 
 MIDDLEWARE = [
