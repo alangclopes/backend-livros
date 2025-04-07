@@ -20,7 +20,7 @@ RUN python manage.py migrate
 
 EXPOSE 8000
 
-CMD ["gunicorn", "backend-livros.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "backend_livros.wsgi:application", "--bind", "0.0.0.0:8000"]
 
 
 
