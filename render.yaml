@@ -6,7 +6,7 @@ services:
     region: oregon
     branch: main
     buildCommand: "./build.sh"
-    startCommand: "gunicorn backend-livros.wsgi:application"
+    startCommand: "gunicorn backend_livros.wsgi:application"
     envVars:
       - key: SECRET_KEY
         generateValue: true
