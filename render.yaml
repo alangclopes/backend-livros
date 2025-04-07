@@ -1,12 +1,12 @@
 services:
   - type: web
     name: django-backend
-    env: docker
+    env: python
     plan: free
     region: oregon
-    branch: main  
-    dockerfilePath: ./Dockerfile
-    autoDeploy: true
+    branch: main
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn backend-livros.wsgi:application"
     envVars:
       - key: SECRET_KEY
         generateValue: true
